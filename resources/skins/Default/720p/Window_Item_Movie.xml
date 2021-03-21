@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">2201</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="group">
+			<description>preload images</description>
+			<left>-100</left>
+			<top>-100</top>
+			<control type="image">
+				<width>1</width>
+				<height>1</height>
+				<texture>button-icon-thumbs-up.png</texture>
+			</control>
+			<control type="image">
+				<width>1</width>
+				<height>1</height>
+				<texture>button-icon-thumbs-down.png</texture>
+			</control>
+			<control type="image">
+				<width>1</width>
+				<height>1</height>
+				<texture>button-icon-play.png</texture>
+			</control>
+			<control type="image">
+				<width>1</width>
+				<height>1</height>
+				<texture>button-icon-plus.png</texture>
+			</control>
+			<control type="image">
+				<width>1</width>
+				<height>1</height>
+				<texture>button-icon-minus.png</texture>
+			</control>
+		</control>
+		<control type="image">
+			<description>background</description>
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture>black-100.png</texture>
+		</control>
+		<control type="group" id="1000">
+			<description>header group</description>
+			<left>60</left>
+			<control type="image" id="1001">
+				<description>fanart</description>
+				<height>350</height>
+				<width>1280</width>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="image">
+				<height>350</height>
+				<width>1280</width>
+				<texture>black-side-fade.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<height>350</height>
+				<width>1280</width>
+				<texture>black-bottom-fade.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="label" id="1002">
+				<description>movie title</description>
+				<top>50</top>
+				<height>60</height>
+				<width>1200</width>
+				<font>font60</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+			</control>
+			<control type="group">
+				<top>110</top>
+				<height>50</height>
+				<control type="label" id="1003">
+					<description>movie year</description>
+					<width>50</width>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<control type="image" id="1004">
+					<description>age rating icon</description>
+					<left>52</left>
+					<width>50</width>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label" id="1005">
+					<description>duration/seasons</description>
+					<left>104</left>
+					<width>100</width>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="textbox" id="1006">
+				<top>160</top>
+				<width>450</width>
+				<height>200</height>
+				<font>font10</font>
+				<textcolor>white</textcolor>
+				<autoscroll delay="3000" time="1000" repeat="10000">true</autoscroll>
+			</control>
+			<control type="label" id="1007">
+				<description>cast</description>
+				<top>360</top>
+				<width>450</width>
+				<height>25</height>
+				<font>font10</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+			</control>
+			<control type="label" id="1008">
+				<description>director</description>
+				<top>385</top>
+				<width>450</width>
+				<height>25</height>
+				<font>font10</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+			</control>
+			<control type="label" id="1009">
+				<description>genres</description>
+				<top>415</top>
+				<width>450</width>
+				<height>25</height>
+				<font>font10</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+			</control>
+		</control>
+		<control type="grouplist" id="2000">
+			<left>60</left>
+			<top>450</top>
+			<width>450</width>
+			<height>250</height>
+			<ondown></ondown>
+			<onright></onright>
+			<onleft></onleft>
+			<onup></onup>
+			<orientation>vertical</orientation>
+			<itemgap>2</itemgap>
+			<scrolltime tween="sine" easing="out">300</scrolltime>
+			<control type="group" id="2100">
+				<description>rate button</description>
+				<width>450</width>
+				<height>50</height>
+				<control type="image">
+					<width>450</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2101)</visible>
+				</control>
+				<control type="button" id="2101">
+					<left>2</left>
+					<top>2</top>
+					<width>446</width>
+					<height>46</height>
+					<ondown>2201</ondown>	
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<textoffsetx>48</textoffsetx>
+				</control>
+				<control type="image">
+					<width>225</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2102)</visible>
+				</control>
+				<control type="button" id="2102">
+					<left>2</left>
+					<top>2</top>
+					<width>221</width>
+					<height>46</height>	
+					<onright>2103</onright>
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<aligny>center</aligny>
+				</control>
+				<control type="image">
+					<left>225</left>
+					<width>225</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2103)</visible>
+				</control>
+				<control type="button" id="2103">
+					<left>227</left>
+					<top>2</top>
+					<width>221</width>
+					<height>46</height>	
+					<onleft>2102</onleft>
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<aligny>center</aligny>
+				</control>
+				<control type="image" id="2110">
+					<left>4</left>
+					<top>4</top>
+					<width>42</width>
+					<height>42</height>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2101)" reversible="false">Conditional</animation>
+				</control>
+				<control type="image" id="2111">
+					<left>4</left>
+					<top>4</top>
+					<width>217</width>
+					<height>42</height>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2102)" reversible="false">Conditional</animation>
+					<aspectratio>keep</aspectratio>
+					<texture>button-icon-thumbs-up.png</texture>
+				</control>
+				<control type="image" id="2112">
+					<left>229</left>
+					<top>4</top>
+					<width>217</width>
+					<height>42</height>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2103)" reversible="false">Conditional</animation>
+					<aspectratio>keep</aspectratio>
+					<texture>button-icon-thumbs-down.png</texture>
+				</control>
+			</control>
+			<control type="group" id="2200">
+				<description>play button</description>
+				<width>450</width>
+				<height>50</height>
+				<control type="image">
+					<width>450</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2201)</visible>
+				</control>
+				<control type="button" id="2201">
+					<left>2</left>
+					<top>2</top>
+					<width>446</width>
+					<height>46</height>
+					<onup>2101</onup>
+					<ondown condition="Control.IsVisible(2301)">2301</ondown>
+					<ondown condition="Control.IsVisible(2401)">2401</ondown>
+					<ondown condition="Control.IsVisible(2501)">2501</ondown>			
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<textoffsetx>48</textoffsetx>
+				</control>
+				<control type="image" id="2202">
+					<left>4</left>
+					<top>4</top>
+					<width>42</width>
+					<height>42</height>
+					<texture>button-icon-play.png</texture>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2201)" reversible="false">Conditional</animation>
+				</control>
+				<control type="progress" id="2203">
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2201)" reversible="false">Conditional</animation>
+					<description>played progress control</description>
+					<left>325</left>
+					<top>22</top>
+					<width>100</width>
+					<height>5</height>
+					<visible>true</visible>
+					<reveal>false</reveal>
+					<texturebg>white-100.png</texturebg>
+					<lefttexture></lefttexture>
+					<midtexture>netflix-red-100.png</midtexture>
+					<righttexture></righttexture>
+				    <overlaytexture></overlaytexture>
+					<info></info>
+				</control>
+			</control>
+			<control type="group" id="2300">
+				<description>play from start</description>
+				<width>450</width>
+				<height>50</height>
+				<control type="image">
+					<width>450</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2301)</visible>
+				</control>
+				<control type="button" id="2301">
+					<left>2</left>
+					<top>2</top>
+					<width>446</width>
+					<height>46</height>
+					<onup>2201</onup>
+					<ondown condition="Control.IsVisible(2401)">2401</ondown>	
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<textoffsetx>48</textoffsetx>
+					<label>Play From Beginning</label>
+				</control>
+				<control type="image" id="2302">
+					<left>4</left>
+					<top>4</top>
+					<width>42</width>
+					<height>42</height>
+					<texture>button-icon-to-start.png</texture>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2301)" reversible="false">Conditional</animation>
+				</control>
+			</control>
+			<control type="group" id="2400">
+				<description>play Trailer</description>
+				<width>450</width>
+				<height>50</height>
+				<control type="image">
+					<width>450</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2401)</visible>
+				</control>
+				<control type="button" id="2401">
+					<left>2</left>
+					<top>2</top>
+					<width>446</width>
+					<height>46</height>
+					<onup condition="Control.IsVisible(2351)">2351</onup>
+					<onup condition="Control.IsVisible(2301)">2301</onup>
+					<ondown condition="Control.IsVisible(2501)">2501</ondown>	
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<textoffsetx>48</textoffsetx>
+					<label>Play Trailer</label>
+				</control>
+				<control type="image" id="2402">
+					<left>4</left>
+					<top>4</top>
+					<width>42</width>
+					<height>42</height>
+					<texture>button-icon-play.png</texture>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2401)" reversible="false">Conditional</animation>
+				</control>
+			</control>
+			<control type="group" id="2500">
+				<description>More like this</description>
+				<width>450</width>
+				<height>50</height>
+				<control type="image">
+					<width>450</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2501)</visible>
+				</control>
+				<control type="button" id="2501">
+					<left>2</left>
+					<top>2</top>
+					<width>446</width>
+					<height>46</height>
+					<onup condition="Control.IsVisible(2401)">2401</onup>
+					<onup condition="Control.IsVisible(2301)">2301</onup>
+					<onup condition="Control.IsVisible(2201)">2201</onup>
+					<ondown condition="Control.IsVisible(2601)">2601</ondown>
+					<ondown condition="Control.IsVisible(2701)">2701</ondown>	
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<textoffsetx>48</textoffsetx>
+					<label>More Like This</label>
+				</control>
+				<control type="image" id="2502">
+					<left>4</left>
+					<top>4</top>
+					<width>42</width>
+					<height>42</height>
+					<texture>button-icon-four-squares.png</texture>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2501)" reversible="false">Conditional</animation>
+				</control>
+			</control>
+			<control type="group" id="2700">
+				<description>MyList</description>
+				<width>450</width>
+				<height>50</height>
+				<control type="image">
+					<width>450</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2701)</visible>
+				</control>
+				<control type="button" id="2701">
+					<left>2</left>
+					<top>2</top>
+					<width>446</width>
+					<height>46</height>	
+					<ondown>2801</ondown>
+					<onup>2501</onup>
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<textoffsetx>48</textoffsetx>
+				</control>
+				<control type="image" id="2702">
+					<left>4</left>
+					<top>4</top>
+					<width>42</width>
+					<height>42</height>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2701)" reversible="false">Conditional</animation>
+				</control>
+			</control>
+			<control type="group" id="2800">
+				<description>Credits</description>
+				<width>450</width>
+				<height>50</height>
+				<control type="image">
+					<width>450</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2801)</visible>
+				</control>
+				<control type="button" id="2801">
+					<left>2</left>
+					<top>2</top>
+					<width>446</width>
+					<height>46</height>	
+					<onup>2701</onup>
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<textoffsetx>48</textoffsetx>
+					<label>Credits & More Info</label>
+					<font>font13</font>
+				</control>
+				<control type="image" id="2802">
+					<left>4</left>
+					<top>4</top>
+					<width>42</width>
+					<height>42</height>
+					<texture>button-icon-more-info.png</texture>
+					<animation effect="fade" end="50" time="200" condition="!Control.HasFocus(2801)" reversible="false">Conditional</animation>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

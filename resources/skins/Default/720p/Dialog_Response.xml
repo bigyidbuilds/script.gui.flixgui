@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">2101</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<zorder>1</zorder>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="group" id="999">
+			<control type="image" id="1000">
+				<width>400</width>
+				<texture>black-100.png</texture>
+			</control>	
+			<control type="textbox"	id="1001">
+				<left>10</left>
+				<width>380</width>
+				<height min="100" max="500">auto</height>
+				<textcolor>FFFFFFFF</textcolor>
+				<font>font13</font>
+				<label>$INFO[Window.Property(TEXTBOX)]</label>
+			</control>
+			<control type="group" id="1999">
+				<control type="grouplist" id="2000">
+					<width>400</width>
+					<height>75</height>
+					<itemgap>5</itemgap>
+					<scrolltime tween="sine" easing="out">200</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>true</visible>
+					<align>center</align>
+					<control type="group" id="2100">
+						<width>100</width>
+						<height>50</height>
+						<control type="image">
+							<texture>rc-white-100.png</texture>
+							<visible>Control.HasFocus(2101)</visible>
+						</control>
+						<control type="button" id="2101">
+							<left>2</left>
+							<top>2</top>
+							<width>96</width>
+							<height>46</height>
+							<texturefocus>rc-grey-100.png</texturefocus>
+							<texturenofocus>rc-grey-100.png</texturenofocus>
+							<font>font13</font>
+							<textcolor>80FFFFFF</textcolor>
+							<focusedcolor>FFFFFFFF</focusedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<onright condition="Control.IsVisible(2201)">2201</onright>
+						</control>
+					</control>
+					<control type="group" id="2200">
+						<width>100</width>
+						<height>50</height>
+						<control type="image">
+							<texture>rc-white-100.png</texture>
+							<visible>Control.HasFocus(2201)</visible>
+						</control>
+						<control type="button" id="2201">
+							<left>2</left>
+							<top>2</top>
+							<width>96</width>
+							<height>46</height>
+							<texturefocus>rc-grey-100.png</texturefocus>
+							<texturenofocus>rc-grey-100.png</texturenofocus>
+							<font>font13</font>
+							<textcolor>80FFFFFF</textcolor>
+							<focusedcolor>FFFFFFFF</focusedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<onright condition="Control.IsVisible(2301)">2301</onright>
+							<onleft>2101</onleft>
+						</control>
+					</control>
+					<control type="group" id="2300">
+						<width>100</width>
+						<height>50</height>
+						<control type="image">
+							<texture>rc-white-100.png</texture>
+							<visible>Control.HasFocus(2301)</visible>
+						</control>
+						<control type="button" id="2301">
+							<left>2</left>
+							<top>2</top>
+							<width>96</width>
+							<height>46</height>
+							<texturefocus>rc-grey-100.png</texturefocus>
+							<texturenofocus>rc-grey-100.png</texturenofocus>
+							<font>font13</font>
+							<textcolor>80FFFFFF</textcolor>
+							<focusedcolor>FFFFFFFF</focusedcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+							<onleft>2201</onleft>
+						</control>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

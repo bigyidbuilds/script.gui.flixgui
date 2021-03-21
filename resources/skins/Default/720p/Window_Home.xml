@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">2102</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<description>background</description>
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture>black-100.png</texture>
+		</control>
+		<control type="group" id="2000">
+			<left>10</left>
+			<description>Main window</description>
+			<control type="image">
+				<visible>Integer.IsGreaterOrEqual(Container(2102).NumItems,1)</visible> 
+				<left>50</left>
+				<height>350</height>
+				<width>1280</width>
+				<texture>$INFO[Container(2102).ListItem.Art(fanart)]</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="image">
+				<visible>Integer.IsGreaterOrEqual(Container(2102).NumItems,1)</visible> 
+				<left>50</left>
+				<height>350</height>
+				<width>1280</width>
+				<texture>black-side-fade.png</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="label">
+				<visible>!String.IsEmpty(Container(2102).ListItem.Label)+!String.IsEmpty(Container(2102).ListItem.year)</visible>
+				<left>50</left>
+				<height>25</height>
+				<label>[B]$INFO[Container(2102).ListItem.Label][/B] ([I]$INFO[Container(2102).ListItem.year][/I])</label>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="label">
+				<visible>!String.IsEmpty(Container(2102).ListItem.Plot)</visible>
+				<left>50</left>
+				<top>30</top>
+				<width>450</width>
+				<height>290</height>
+				<font>font10</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Container(2102).ListItem.Plot]</label>
+				<aligny>center</aligny>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<control type="label">
+				<visible>!String.IsEmpty(Container(2102).ListItem.RatingAndVotes(tmdb))</visible>
+				<left>50</left>
+				<top>320</top>
+				<height>25</height>
+				<label>$INFO[Container(2102).ListItem.Property(moviedb)] Rating $INFO[Container(2102).ListItem.RatingAndVotes(tmdb)]</label>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+			</control>
+			<control type="label" id="2201">
+				<visible>!String.IsEmpty(Control.GetLabel(2201))</visible> 
+				<left>50</left>
+				<top>580</top>
+				<width min="100" max="1220">auto</width>
+				<height>25</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+				<scroll>true</scroll>
+			</control>
+			<control type="fixedlist" id="2202">
+				<left>50</left>
+				<top>605</top>
+				<width>1144</width>
+				<height>225</height>
+				<onleft>1001</onleft>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<focusposition>0</focusposition>
+				<visible>true</visible>
+				<itemlayout width="143" height="210">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>133</width>
+						<height>200</height>
+						<texture>$INFO[ListItem.Art(poster)]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout width="143" height="210">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>133</width>
+						<height>200</height>
+						<texture>$INFO[ListItem.Art(poster)]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>350</top>
+				<height>370</height>
+				<width>1280</width>
+				<texture>black-bottom-fade.png</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="label" id="2101">
+				<visible>Integer.IsGreaterOrEqual(Container(2102).NumItems,1)</visible> 
+				<left>50</left>
+				<top>350</top>
+				<width min="100" max="1220">auto</width>
+				<height>25</height>
+				<font>font13</font>
+				<textcolor>white</textcolor>
+				<scroll>true</scroll>
+			</control>
+			<control type="fixedlist" id="2102">
+				<left>50</left>
+				<top>375</top>
+				<width>1144</width>
+				<height>225</height>
+				<onleft>1001</onleft>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<focusposition>0</focusposition>
+				<visible>true</visible>
+				<itemlayout width="143" height="210">
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>133</width>
+						<height>200</height>
+						<texture>$INFO[ListItem.Art(poster)]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout width="143" height="210">
+					<control type="image">
+						<left>3</left>
+						<top>3</top>
+						<width>137</width>
+						<height>204</height>
+						<texture>white-100.png</texture>
+						<visible>Control.HasFocus(2102)</visible>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>5</top>
+						<width>133</width>
+						<height>200</height>
+						<texture>$INFO[ListItem.Art(poster)]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+		<control type="group" id="1000">
+			<description>left hand controls</description>
+			<left>0</left>
+			<top>0</top>
+			<defaultcontrol>1002</defaultcontrol>
+			<control type="grouplist" id="1001">
+				<top>135</top>
+				<width>300</width>
+				<height>450</height>
+				<itemgap>25</itemgap>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<orientation>vertical</orientation>
+				<onup></onup>
+				<ondown></ondown>
+				<onleft></onleft>
+				<onright>2000</onright>
+				<align>left</align>
+				<control type="group">
+					<height>50</height>
+					<control type="button" id="1002">
+						<description>home button</description>
+						<width>50</width>
+						<texturefocus>button-icon-home.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-home.png</texturenofocus>
+						<ondown>1003</ondown>
+						<onright>2000</onright>
+					</control>
+					<control type="image" id="10021">
+						<description>tab selected indicator</description>
+						<top>50</top>
+						<width>50</width>
+						<height>5</height>
+						<texture>netflix-red-80.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<height>50</height>	
+					<control type="button" id="1003">
+						<description>search button</description>
+						<width>50</width>
+						<height>50</height>
+						<texturefocus>button-icon-search.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-search.png</texturenofocus>
+						<onup>1002</onup>
+						<onright>2000</onright>
+						<ondown>1004</ondown>
+					</control>
+					<control type="image" id="10031">
+						<description>tab selected indicator</description>
+						<top>50</top>
+						<width>50</width>
+						<height>5</height>
+						<texture>netflix-red-80.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<height>50</height>
+					<control type="button" id="1004">
+						<description>movie button</description>
+						<width>50</width>
+						<height>50</height>
+						<texturefocus>button-icon-movie.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-movie.png</texturenofocus>
+						<onright>2000</onright>
+						<onup>1003</onup>
+						<ondown>1005</ondown>
+					</control>
+					<control type="image" id="10041">
+						<description>tab selected indicator</description>
+						<top>50</top>
+						<width>50</width>
+						<height>5</height>
+						<texture>netflix-red-80.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<height>50</height>
+					<control type="button" id="1005">
+						<description>tv button</description>
+						<width>50</width>
+						<height>50</height>
+						<texturefocus>button-icon-tvshow.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-tvshow.png</texturenofocus>
+						<onright>2000</onright>
+						<onup>1004</onup>
+						<ondown>1006</ondown>
+					</control>
+					<control type="image" id="10051">
+						<description>tab selected indicator</description>
+						<top>50</top>
+						<width>50</width>
+						<height>5</height>
+						<texture>netflix-red-80.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<height>50</height>
+					<control type="button" id="1006">
+						<description>setting button</description>
+						<width>50</width>
+						<height>50</height>
+						<texturefocus>button-icon-setting.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-setting.png</texturenofocus>
+						<onright>2000</onright>
+						<onup>1005</onup>
+						<ondown>1002</ondown>
+					</control>
+					<control type="image" id="10061">
+						<description>tab selected indicator</description>
+						<top>50</top>
+						<width>50</width>
+						<height>5</height>
+						<texture>netflix-red-80.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<height>50</height>
+					<control type="button" id="1007">
+						<description>setting button</description>
+						<width>50</width>
+						<height>50</height>
+						<texturefocus>button-icon-setting.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-plus.png</texturenofocus>
+						<onright>2000</onright>
+						<onup>1005</onup>
+						<ondown>1002</ondown>
+					</control>
+					<control type="image" id="10071">
+						<description>tab selected indicator</description>
+						<top>50</top>
+						<width>50</width>
+						<height>5</height>
+						<texture>netflix-red-80.png</texture>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

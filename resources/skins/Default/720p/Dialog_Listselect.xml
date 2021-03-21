@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">3000</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<zorder>1</zorder>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture colordiffuse="80000000">black-100.png</texture>
+		</control>
+		<control type="group" id="1000">
+			<width>410</width>
+			<control type="image" id="1001">
+				<texture>black-100.png</texture>
+				<bordertexture border="5">netflix-red-100.png</bordertexture>
+      			<bordersize>5</bordersize>
+			</control>
+			<control type="textbox" id="2000">
+				<left>10</left>
+				<top>10</top>
+				<width>390</width>
+				<height min="50" max="500">auto</height>
+				<font>font13</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<label>$INFO[Window.Property(TEXT)]</label>
+			</control>
+			<control type="list" id="3000">
+				<left>5</left>
+				<top>5</top>
+				<itemlayout width="400" height="50">
+					<control type="image">
+						<left>2</left>
+						<top>2</top>
+						<width>395</width>
+						<height>46</height>
+						<texture border="5">rc-grey-100.png</texture>
+					</control>
+					<control type="label">
+						<left>4</left>
+						<top>4</top>
+						<width>395</width>
+						<height>42</height>
+						<font>font13</font>
+						<textcolor>80FFFFFF</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="400" height="50">
+					<control type="image">
+						<width>400</width>
+						<height>50</height>
+						<texture border="5">white-100.png</texture>
+						<visible>Control.HasFocus(3000)</visible>
+					</control>
+					<control type="image">
+						<left>2</left>
+						<top>2</top>
+						<width>396</width>
+						<height>46</height>
+						<texture border="5">rc-grey-100.png</texture>
+					</control>
+					<control type="label">
+						<left>4</left>
+						<top>4</top>
+						<width>392</width>
+						<height>42</height>
+						<font>font13</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

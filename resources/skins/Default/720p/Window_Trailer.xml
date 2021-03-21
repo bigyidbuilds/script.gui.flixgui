@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">2102</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<description>background</description>
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture>black-100.png</texture>
+		</control>
+		<control type="image" id="1000">
+			<description>background fanart</description>
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture></texture>
+		</control>
+		<control type="group" id="2000">
+			<description>player</description>
+			<left>160</left>
+			<top>50</top>
+			<width>960</width>
+			<height>540</height>
+			<control type="button" id="2001">
+				<ondown>3000</ondown>
+				<texturenofocus>black-100.png</texturenofocus>
+				<texturefocus>black-100.png</texturefocus>
+			</control>
+			<control type="image">
+				<texture>$INFO[Container(3000).ListItem.Art(thumb)]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="videowindow" id="2002">
+			</control>
+			<control type="group" id="6000">
+				<description>player controls</description>
+				<visible allowhiddenfocus="true">!Control.HasFocus(3000)+Player.HasMedia</visible>
+				<control type="group">
+					<left>5</left>
+					<top>480</top>
+					<width>950</width>
+					<height>5</height>
+					<control type="progress">
+						<visible>true</visible>
+						<reveal>true</reveal>
+						<texturebg >white-100.png</texturebg>
+						<lefttexture></lefttexture>
+						<midtexture>netflix-red-80.png</midtexture>
+						<righttexture></righttexture>
+						<overlaytexture></overlaytexture>
+						<info>Player.ProgressCache</info>
+					</control>
+					<control type="progress">
+						<visible>true</visible>
+						<reveal>true</reveal>
+						<texturebg>invisible.png</texturebg>
+						<lefttexture></lefttexture>
+						<midtexture>netflix-red-100.png</midtexture>
+						<righttexture></righttexture>
+						<overlaytexture></overlaytexture>
+						<info>Player.Progress</info>
+					</control>
+					<control type="slider" id="6001">
+						<top>-5</top>
+						<height>30</height>
+						<visible>true</visible>
+						<texturesliderbar>invisible.png</texturesliderbar>
+						<textureslidernib colordiffuse="80FFFFFF" >button-icon-seek.png</textureslidernib>
+						<textureslidernibfocus>button-icon-seek.png</textureslidernibfocus>
+						<info>Player.Progress</info>
+						<action>seek</action>
+						<controloffsetx></controloffsetx>
+						<controloffsety></controloffsety>
+						<pulseonselect></pulseonselect>
+						<orientation>horizontal</orientation>
+						<onup></onup>
+						<ondown>6100</ondown>
+						<onleft></onleft>
+						<onright></onright>
+					</control>
+				</control>
+				<control type="grouplist" id="6100">
+					<defaultcontrol>6102</defaultcontrol>
+					<left>5</left>
+					<top>490</top>
+					<width>950</width>
+					<height>50</height>
+					<itemgap>5</itemgap>
+					<scrolltime tween="sine" easing="out">200</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>true</visible>
+					<onup>6001</onup>
+					<ondown>3000</ondown>
+					<onleft></onleft>
+					<onright></onright>
+					<align>left</align>
+					<control type="button" id="6101">
+						<width>50</width>
+						<height>50</height>
+						<texturefocus colordiffuse="FFFFFFFF">button-icon-to-start.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-to-start.png</texturenofocus>
+						<onclick>PlayerControl(Previous)</onclick>
+					</control>
+					<control type="togglebutton" id="6102">
+						<width>50</width>
+						<height>50</height>
+						<texturefocus colordiffuse="FFFFFFFF">button-icon-play.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-play.png</texturenofocus>
+						<alttexturefocus colordiffuse="FFFFFFFF">button-icon-pause.png</alttexturefocus>
+						<alttexturenofocus colordiffuse="80FFFFFF">button-icon-pause.png</alttexturenofocus>
+						<usealttexture>!Player.Paused</usealttexture>
+						<onclick>PlayerControl(Play)</onclick>
+					</control>
+					<control type="button" id="6103">
+						<width>50</width>
+						<height>50</height>
+						<texturefocus colordiffuse="FFFFFFFF">button-icon-stop.png</texturefocus>
+						<texturenofocus colordiffuse="80FFFFFF">button-icon-stop.png</texturenofocus>
+						<onclick>PlayerControl(Stop)</onclick>
+					</control>
+					<control type="label">
+						<height>50</height>
+						<font>font13</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<label>$INFO[Player.Time]/$INFO[Player.Duration]</label>
+						<aligny>center</aligny>
+						<align>right</align>
+					</control>
+				</control>
+			</control>		
+		</control>
+		<control type="list" id="3000">
+			<left>160</left>
+			<top>595</top>
+			<width>960</width>
+			<height>125</height>
+			<onup>6100</onup>
+			<itemlayout width="960" height="50">
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>956</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="label">
+					<left>4</left>
+					<top>4</top>
+					<width>952</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="960" height="50">
+				<control type="image">
+					<width>960</width>
+					<height>50</height>
+					<texture border="5">white-100.png</texture>
+					<visible>Control.HasFocus(3000)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>956</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="label">
+					<left>4</left>
+					<top>4</top>
+					<width>952</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</focusedlayout>
+		</control>
+	</controls>
+</window>

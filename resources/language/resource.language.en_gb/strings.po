@@ -1,0 +1,100 @@
+# XBMC Media Center language file
+# Addon Name: THFC Zone
+# Addon id: plugin.video.thfczone
+# Addon Provider: BYB
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: XBMC Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#used in settings.xml
+
+msgctxt "#30000"
+msgid "General Settings"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Debug"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Addon Skin Settings"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Appearance"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Resolution"
+msgstr ""
+
+msgctxt "#30005"
+msgid "720p"
+msgstr ""
+
+msgctxt "#30006"
+msgid "1080p"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Skin"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Netflix"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Disney"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Amazon"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Movie Database"
+msgstr ""
+
+
+msgctxt "#30012"
+msgid "TMDB"
+msgstr ""
+
+msgctxt "#30013"
+msgid "API Key"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Username"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Password"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Regional"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Region"
+msgstr ""
+
+msgctxt "#30018"
+msgid "UK"
+msgstr ""
+
+msgctxt "#30019"
+msgid "USA"
+msgstr ""

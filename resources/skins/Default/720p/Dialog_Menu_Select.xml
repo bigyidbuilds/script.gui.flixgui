@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">0</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<onload>SetProperty(AnimationWaitingDialogOnClose,true)</onload>
+	<animation effect="slide" end="250" time="200">WindowOpen</animation>
+	<coordinates>
+		<left>-200</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<animation condition="IsEmpty(window.property(AnimationWaitingDialogOnClose))" type="conditional" reversible="false">
+			<animation effect="slide" start="250" end="-200" time="200"/>
+			<animation effect="fade" time="200" delay="200"/>
+		</animation>
+		<control type="image">
+			<description>background</description>
+			<width>60</width>
+			<height>720</height>
+			<left>-60</left>
+			<texture>black-100.png</texture>
+			<aspectratio>scale</aspectratio>
+			<visible>true</visible>
+		</control>
+		<control type="image" id="10001">
+			<description>background</description>
+			<left>-1</left>
+			<width>1480</width>
+			<height>720</height>
+			<texture>black-side-fade-2.png</texture>
+			<aspectratio>scale</aspectratio>
+			<visible>true</visible>
+		</control>
+		<control type="grouplist" id="1001">
+			<top>135</top>
+			<width>300</width>
+			<height>450</height>
+			<itemgap>25</itemgap>
+			<scrolltime tween="sine" easing="out">200</scrolltime>
+			<orientation>vertical</orientation>
+			<onup></onup>
+			<ondown></ondown>
+			<onleft></onleft>
+			<onright></onright>
+			<align>left</align>
+			<control type="group">
+				<height>50</height>
+				<control type="button" id="1002">
+					<description>home button</description>
+					<width>50</width>
+					<texturefocus>button-icon-home.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-home.png</texturenofocus>
+					<ondown>1003</ondown>
+					<onright>2000</onright>
+				</control>
+				<control type="image" id="10021">
+					<description>tab selected indicator</description>
+					<top>50</top>
+					<width>50</width>
+					<height>5</height>
+					<texture>netflix-red-100.png</texture>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1002)">Conditional</animation>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(10001)</visible>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1002)">Conditional</animation>
+					<left>60</left>
+					<width>240</width>
+					<height>50</height>
+					<label>Home</label>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="group">
+				<height>50</height>	
+				<control type="button" id="1003">
+					<description>search button</description>
+					<width>50</width>
+					<height>50</height>
+					<texturefocus>button-icon-search.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-search.png</texturenofocus>
+					<onup>1002</onup>
+					<onright>2000</onright>
+					<ondown>1004</ondown>
+				</control>
+				<control type="image" id="10031">
+					<description>tab selected indicator</description>
+					<top>50</top>
+					<width>50</width>
+					<height>5</height>
+					<texture>netflix-red-100.png</texture>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1003)">Conditional</animation>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(10001)</visible>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1003)">Conditional</animation>
+					<left>60</left>
+					<width>240</width>
+					<height>50</height>
+					<label>Search</label>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="group">
+				<height>50</height>
+				<control type="button" id="1004">
+					<description>movie button</description>
+					<width>50</width>
+					<height>50</height>
+					<texturefocus>button-icon-movie.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-movie.png</texturenofocus>
+					<onright>2000</onright>
+					<onup>1003</onup>
+					<ondown>1005</ondown>
+				</control>
+				<control type="image" id="10041">
+					<description>tab selected indicator</description>
+					<top>50</top>
+					<width>50</width>
+					<height>5</height>
+					<texture>netflix-red-100.png</texture>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1004)">Conditional</animation>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(10001)</visible>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1004)">Conditional</animation>
+					<left>60</left>
+					<width>240</width>
+					<height>50</height>
+					<label>Films</label>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="group">
+				<height>50</height>
+				<control type="button" id="1005">
+					<description>tv button</description>
+					<width>50</width>
+					<height>50</height>
+					<texturefocus>button-icon-tvshow.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-tvshow.png</texturenofocus>
+					<onright>2000</onright>
+					<onup>1004</onup>
+					<ondown>1006</ondown>
+				</control>
+				<control type="image" id="10051">
+					<description>tab selected indicator</description>
+					<top>50</top>
+					<width>50</width>
+					<height>5</height>
+					<texture>netflix-red-100.png</texture>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1005)">Conditional</animation>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(10001)</visible>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1005)">Conditional</animation>
+					<left>60</left>
+					<width>240</width>
+					<height>50</height>
+					<label>TV Programmes</label>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="group">
+				<height>50</height>
+				<control type="button" id="1006">
+					<description>setting button</description>
+					<width>50</width>
+					<height>50</height>
+					<texturefocus>button-icon-setting.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-setting.png</texturenofocus>
+					<onright>2000</onright>
+					<onup>1005</onup>
+					<ondown>1007</ondown>
+				</control>
+				<control type="image" id="10061">
+					<description>tab selected indicator</description>
+					<top>50</top>
+					<width>50</width>
+					<height>5</height>
+					<texture>netflix-red-100.png</texture>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1006)">Conditional</animation>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(10001)</visible>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1006)">Conditional</animation>
+					<left>60</left>
+					<width>240</width>
+					<height>50</height>
+					<label>Settings</label>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+			<control type="group">
+				<height>50</height>
+				<control type="button" id="1007">
+					<description>setting button</description>
+					<width>50</width>
+					<height>50</height>
+					<texturefocus>button-icon-plus.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-plus.png</texturenofocus>
+					<onright>2000</onright>
+					<onup>1006</onup>
+					<ondown>1100</ondown>
+				</control>
+				<control type="image" id="10071">
+					<description>tab selected indicator</description>
+					<top>50</top>
+					<width>50</width>
+					<height>5</height>
+					<texture>netflix-red-100.png</texture>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1007)">Conditional</animation>
+				</control>
+				<control type="label">
+					<visible>Control.IsVisible(10001)</visible>
+					<animation effect="fade"  start="100" end="50" condition="!Control.HasFocus(1007)">Conditional</animation>
+					<left>60</left>
+					<width>240</width>
+					<height>50</height>
+					<label>My List</label>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+			</control>
+		</control>
+		<control type="button" id="1100">
+			<description>exit button</description>
+			<top>620</top>
+			<width>150</width>
+			<height>30</height>
+			<texturenofocus colordiffuse="80FFFFFF">rc-white-100.png</texturenofocus>
+			<texturefocus>rc-white-100.png</texturefocus>
+			<label>Exit</label>
+			<textcolor>black</textcolor>
+			<focusedcolor>black</focusedcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<onup>1006</onup>
+		</control>
+	</controls>
+</window>

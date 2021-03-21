@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">3000</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<description>background</description>
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture>black-100.png</texture>
+		</control>
+		<control type="group" id="1000">
+			<description>header group</description>
+			<left>60</left>
+			<control type="label" id="1001">
+				<description>title</description>
+				<top>50</top>
+				<height>60</height>
+				<width>426</width>
+				<font>font60</font>
+				<textcolor>white</textcolor>
+				<aligny>center</aligny>
+			</control>
+			<control type="group">
+				<top>110</top>
+				<height>50</height>
+				<control type="label" id="1002">
+					<description>year</description>
+					<width>50</width>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<control type="image" id="1003">
+					<description>age rating icon</description>
+					<left>52</left>
+					<width>50</width>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label" id="1004">
+					<description>seasons</description>
+					<left>104</left>
+					<width>100</width>
+					<font>font13</font>
+					<textcolor>white</textcolor>
+					<aligny>center</aligny>
+				</control>
+			</control>
+		</control>
+		<control type="list" id="2000">
+			<left>60</left>
+			<top>200</top>
+			<width>426</width>
+			<height>400</height>
+			<onright>3000</onright>
+			<orientation>vertical</orientation>
+			<scrolltime tween="sine" easing="out">200</scrolltime>
+			<focusposition>0</focusposition>
+			<itemlayout width="426" height="50">
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>422</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="label">
+					<left>4</left>
+					<top>4</top>
+					<width>418</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>4</left>
+					<top>4</top>
+					<width>418</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+					<align>right</align>
+				</control>
+			</itemlayout>
+			<focusedlayout width="426" height="50">
+				<control type="image">
+					<width>426</width>
+					<height>50</height>
+					<texture border="5">white-100.png</texture>
+					<visible>Control.HasFocus(2000)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>422</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="label">
+					<left>4</left>
+					<top>4</top>
+					<width>418</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<left>4</left>
+					<top>4</top>
+					<width>418</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+					<align>right</align>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="list" id="3000">
+			<left>500</left>
+			<top>60</top>
+			<width>760</width>
+			<height>640</height>
+			<onleft>2000</onleft>
+			<orientation>vertical</orientation>
+			<scrolltime tween="sine" easing="out">200</scrolltime>
+			<focusposition>0</focusposition>
+			<itemlayout width="760" height="204">
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>133</width>
+					<height>200</height>
+					<texture>$INFO[ListItem.Art(poster)]</texture>
+				</control>
+				<control type="group">
+					<left>140</left>
+					<width>600</width>
+					<height>204</height>
+					<control type="label">
+						<height>15</height>
+						<width max="600">auto</width>
+						<textcolor>white</textcolor>
+						<font>font13</font>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<aligny>center</aligny>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>50</width>
+						<height>50</height>
+						<label>$INFO[ListItem.year]</label>
+						<font>font13</font>
+						<textcolor>80FFFFFF</textcolor>
+						<aligny>center</aligny>
+					</control>
+					<control type="image">
+						<top>20</top>
+						<left>50</left>
+						<width>50</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.Art(thumb)]</texture>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<left>102</left>
+						<width>200</width>
+						<height>50</height>
+						<font>font13</font>
+						<textcolor>80FFFFFF</textcolor>
+						<label>$INFO[ListItem.Property(term)]</label>
+						<aligny>center</aligny>
+					</control>
+					<control type="textbox">
+						<top>70</top>
+						<width>600</width>
+						<height>115</height>
+						<label>$INFO[ListItem.Plot]</label>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout width="760" height="204">
+				<control type="image">
+					<width>137</width>
+					<height>204</height>
+					<texture>white-100.png</texture>
+					<visible>Control.HasFocus(3000)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>133</width>
+					<height>200</height>
+					<texture>$INFO[ListItem.Art(poster)]</texture>
+				</control>
+				<control type="group">
+					<left>140</left>
+					<width>600</width>
+					<height>204</height>
+					<control type="label">
+						<height>15</height>
+						<width max="600">auto</width>
+						<textcolor>white</textcolor>
+						<font>font13</font>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<aligny>center</aligny>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<width>50</width>
+						<height>50</height>
+						<label>$INFO[ListItem.year]</label>
+						<font>font13</font>
+						<textcolor>80FFFFFF</textcolor>
+						<aligny>center</aligny>
+					</control>
+					<control type="image">
+						<top>20</top>
+						<left>50</left>
+						<width>50</width>
+						<height>50</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$INFO[ListItem.Art(thumb)]</texture>
+					</control>
+					<control type="label">
+						<top>20</top>
+						<left>102</left>
+						<width>200</width>
+						<height>50</height>
+						<font>font13</font>
+						<textcolor>80FFFFFF</textcolor>
+						<label>$INFO[ListItem.Property(term)]</label>
+						<aligny>center</aligny>
+					</control>
+					<control type="textbox">
+						<top>70</top>
+						<width>600</width>
+						<height>115</height>
+						<label>$INFO[ListItem.Plot]</label>
+						<autoscroll delay="3000" time="1000" repeat="10000">Control.HasFocus(3000)</autoscroll>
+					</control>
+				</control>
+			</focusedlayout>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">6102</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<zorder>1</zorder>
+	<coordinates>
+		<left>160</left>
+		<top>50</top>
+	</coordinates>
+	<controls>
+		<control type="videowindow" id="2002">
+			<width>960</width>
+			<height>540</height>
+		</control>
+		<control type="group" id="6000">
+			<description>player controls</description>
+			<top>540</top>
+			<visible allowhiddenfocus="true">Player.HasMedia</visible>
+			<control type="image">
+				<texture border="5">rc-grey-100.png</texture>
+				<width>960</width>
+				<height>60</height>
+			</control>
+			<control type="group">
+				<left>5</left>
+				<top>2</top>
+				<width>950</width>
+				<height>5</height>
+				<control type="progress">
+					<visible>true</visible>
+					<reveal>true</reveal>
+					<texturebg >white-100.png</texturebg>
+					<lefttexture></lefttexture>
+					<midtexture>netflix-red-80.png</midtexture>
+					<righttexture></righttexture>
+					<overlaytexture></overlaytexture>
+					<info>Player.ProgressCache</info>
+				</control>
+				<control type="progress">
+					<visible>true</visible>
+					<reveal>true</reveal>
+					<texturebg>invisible.png</texturebg>
+					<lefttexture></lefttexture>
+					<midtexture>netflix-red-100.png</midtexture>
+					<righttexture></righttexture>
+					<overlaytexture></overlaytexture>
+					<info>Player.Progress</info>
+				</control>
+				<control type="slider" id="6001">
+					<top>-5</top>
+					<height>30</height>
+					<visible>true</visible>
+					<texturesliderbar>invisible.png</texturesliderbar>
+					<textureslidernib colordiffuse="80FFFFFF" >button-icon-seek.png</textureslidernib>
+					<textureslidernibfocus>button-icon-seek.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<action>seek</action>
+					<controloffsetx></controloffsetx>
+					<controloffsety></controloffsety>
+					<pulseonselect></pulseonselect>
+					<orientation>horizontal</orientation>
+					<onup></onup>
+					<ondown>6100</ondown>
+					<onleft></onleft>
+					<onright></onright>
+				</control>
+			</control>
+			<control type="grouplist" id="6100">
+				<defaultcontrol>6102</defaultcontrol>
+				<left>5</left>
+				<top>12</top>
+				<width>950</width>
+				<height>50</height>
+				<itemgap>5</itemgap>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<orientation>horizontal</orientation>
+				<visible>true</visible>
+				<onup>6001</onup>
+				<ondown>3000</ondown>
+				<onleft></onleft>
+				<onright></onright>
+				<align>left</align>
+				<control type="button" id="6101">
+					<width>50</width>
+					<height>50</height>
+					<texturefocus colordiffuse="FFFFFFFF">button-icon-to-start.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-to-start.png</texturenofocus>
+					<onclick>PlayerControl(Previous)</onclick>
+				</control>
+				<control type="togglebutton" id="6102">
+					<width>50</width>
+					<height>50</height>
+					<texturefocus colordiffuse="FFFFFFFF">button-icon-play.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-play.png</texturenofocus>
+					<alttexturefocus colordiffuse="FFFFFFFF">button-icon-pause.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="80FFFFFF">button-icon-pause.png</alttexturenofocus>
+					<usealttexture>!Player.Paused</usealttexture>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>
+				<control type="button" id="6103">
+					<width>50</width>
+					<height>50</height>
+					<texturefocus colordiffuse="FFFFFFFF">button-icon-stop.png</texturefocus>
+					<texturenofocus colordiffuse="80FFFFFF">button-icon-stop.png</texturenofocus>
+					<onclick>PlayerControl(Stop)</onclick>
+				</control>
+				<control type="label">
+					<height>50</height>
+					<font>font13</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[Player.Time]/$INFO[Player.Duration]</label>
+					<aligny>center</aligny>
+					<align>right</align>
+				</control>
+			</control>
+		</control>		
+	</controls>
+</window>

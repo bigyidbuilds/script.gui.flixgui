@@ -8,12 +8,12 @@ The script has also has it's own database for caching of TMDB Meta data which is
 ## Requirements of the Caller Addon to the script
 
 * TMDB API
-** TMDB Details key obtainable from https://www.themoviedb.org/settings/api
-** A api Key is required
+	* TMDB Details key obtainable from https://www.themoviedb.org/settings/api
+	* A api Key is required
 
 *  YouTube API
-** Youtube details https://developers.google.com/youtube/v3/getting-started
-** A api Key is required
-** A client Id is required
-** A client Secret is required
+	* Youtube details https://developers.google.com/youtube/v3/getting-started
+	* A api Key is required
+	* A client Id is required
+	* A client Secret is required
 

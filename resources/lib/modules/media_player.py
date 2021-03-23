@@ -7,7 +7,6 @@ from collections import namedtuple
 import math
 import sqlite3
 '''#####-----Internal Modules-----#####'''
-from modules._addon import *
 from modules._common import Log,DateTimeNow
 
 class PlayerCallBack():

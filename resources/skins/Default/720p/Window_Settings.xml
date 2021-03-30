@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="false">2101</defaultcontrol>
+	<menucontrol>0</menucontrol>
+	<backgroundcolor>0</backgroundcolor>
+	<animation effect="fade" time="200">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+	<coordinates>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<description>background</description>
+			<left>0</left>
+			<top>0</top>
+			<width>100%</width>
+			<height>100%</height>
+			<texture>black-100.png</texture>
+		</control>
+		<control type="grouplist" id="2000">
+			<left>60</left>
+			<top>60</top>
+			<width>250</width>
+			<height>250</height>
+			<ondown></ondown>
+			<onright></onright>
+			<onleft></onleft>
+			<onup></onup>
+			<orientation>vertical</orientation>
+			<itemgap>2</itemgap>
+			<scrolltime tween="sine" easing="out">300</scrolltime>
+			<control type="group" id="2100">
+				<description>settings button</description>
+				<width>250</width>
+				<height>50</height>
+				<control type="image">
+					<width>250</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2101)</visible>
+				</control>
+				<control type="button" id="2101">
+					<left>2</left>
+					<top>2</top>
+					<width>246</width>
+					<height>46</height>
+					<ondown>2201</ondown>	
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<label>Settings</label>
+					<onright>3000</onright>
+				</control>
+			</control>
+			<control type="group" id="2200">
+				<description>Tools button</description>
+				<width>250</width>
+				<height>50</height>
+				<control type="image">
+					<width>250</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2201)</visible>
+				</control>
+				<control type="button" id="2201">
+					<left>2</left>
+					<top>2</top>
+					<width>246</width>
+					<height>46</height>
+					<onup>2101</onup>
+					<ondown>2301</ondown>
+					<onright>3100</onright>		
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<label>Tools</label>
+				</control>
+			</control>
+			<control type="group" id="2300">
+				<description>Info</description>
+				<width>250</width>
+				<height>50</height>
+				<control type="image">
+					<width>250</width>
+					<height>50</height>
+					<texture border="5">rc-white-100.png</texture>
+					<visible>Control.HasFocus(2301)</visible>
+				</control>
+				<control type="button" id="2301">
+					<left>2</left>
+					<top>2</top>
+					<width>246</width>
+					<height>46</height>
+					<onup>2201</onup>
+					<onright>3200</onright>
+					<texturenofocus border="5">rc-grey-100.png</texturenofocus>
+					<texturefocus border="5">rc-grey-100.png</texturefocus>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<focusedcolor>FFFFFFFF</focusedcolor>
+					<aligny>center</aligny>
+					<label>Information</label>
+				</control>
+			</control>
+		</control>
+		<control type="list" id="3000">
+			<animation effect="slide" end="0,-660" condition="Control.HasFocus(2201)|Control.HasFocus(3100)" time="300">Conditional</animation>
+			<animation effect="slide" end="0,-1380" condition="Control.HasFocus(2301)|Control.HasFocus(3200)" time="300">Conditional</animation>
+			<left>330</left>
+			<top>60</top>
+			<width>900</width>
+			<height>600</height>
+			<onleft>2101</onleft>
+			<scrolltime tween="sine" easing="out">200</scrolltime>
+			<itemlayout width="900" height="50">
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>896</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>46</width>
+					<height>46</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>54</left>
+					<top>4</top>
+					<width>842</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<aligny>center</aligny>
+				</control>
+			</itemlayout>
+			<focusedlayout width="900" height="50">
+				<control type="image">
+					<width>900</width>
+					<height>50</height>
+					<texture border="5">white-100.png</texture>
+					<visible>Control.HasFocus(3000)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>896</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>46</width>
+					<height>46</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>54</left>
+					<top>4</top>
+					<width>842</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<aligny>center</aligny>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="list" id="3100">
+			<animation effect="slide" end="0,-660" condition="Control.HasFocus(2201)|Control.HasFocus(3100)" time="300">Conditional</animation>
+			<animation effect="slide" end="0,-1380" condition="Control.HasFocus(2301)|Control.HasFocus(3200)" time="300">Conditional</animation>
+			<left>330</left>
+			<top>720</top>
+			<width>900</width>
+			<height>600</height>
+			<onleft>2201</onleft>
+			<scrolltime tween="sine" easing="out">200</scrolltime>
+			<itemlayout width="900" height="50">
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>896</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>46</width>
+					<height>46</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>54</left>
+					<top>4</top>
+					<width>842</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<aligny>center</aligny>
+				</control>
+			</itemlayout>
+			<focusedlayout width="900" height="50">
+				<control type="image">
+					<width>900</width>
+					<height>50</height>
+					<texture border="5">white-100.png</texture>
+					<visible>Control.HasFocus(3100)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>896</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>46</width>
+					<height>46</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>54</left>
+					<top>4</top>
+					<width>842</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<aligny>center</aligny>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="list" id="3200">
+			<animation effect="slide" end="0,-660" condition="Control.HasFocus(2201)|Control.HasFocus(3100)" time="300">Conditional</animation>
+			<animation effect="slide" end="0,-1380" condition="Control.HasFocus(2301)|Control.HasFocus(3200)" time="300">Conditional</animation>
+			<left>330</left>
+			<top>60</top>
+			<width>900</width>
+			<height>600</height>
+			<onleft>2301</onleft>
+			<scrolltime tween="sine" easing="out">200</scrolltime>
+			<itemlayout width="900" height="50">
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>896</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>46</width>
+					<height>46</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>54</left>
+					<top>4</top>
+					<width>842</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>80FFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<aligny>center</aligny>
+				</control>
+			</itemlayout>
+			<focusedlayout width="900" height="50">
+				<control type="image">
+					<width>900</width>
+					<height>50</height>
+					<texture border="5">white-100.png</texture>
+					<visible>Control.HasFocus(3200)</visible>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>896</width>
+					<height>46</height>
+					<texture border="5">rc-grey-100.png</texture>
+				</control>
+				<control type="image">
+					<left>2</left>
+					<top>2</top>
+					<width>46</width>
+					<height>46</height>
+					<texture>$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="label">
+					<left>54</left>
+					<top>4</top>
+					<width>842</width>
+					<height>42</height>
+					<font>font13</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<aligny>center</aligny>
+				</control>
+			</focusedlayout>
+		</control>
+	</controls>
+</window>

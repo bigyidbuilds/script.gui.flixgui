@@ -46,7 +46,7 @@ The script has also has it's own database for caching of TMDB Meta data which is
 		</section>
 	</settings>
 ```
-* Strings PO file for settings.xml label
+* Strings PO file for settings.xml labels
 ```
 # Kodi Media Center language file
 # Addon Name: OKA GUI

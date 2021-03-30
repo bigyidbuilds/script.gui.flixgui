@@ -7,7 +7,7 @@
 		<import addon="plugin.video.youtube" version="6.0.0"/>
 		<import addon="script.module.resolveurl" version="5.0.00"/>
 	</requires>
-	<extension point="xbmc.python.module" library="resources/lib">
+	<extension point="xbmc.python.module" library="lib">
 		<provides>excutable</provides>
 	</extension>
 	<extension point="xbmc.service" library="service.py" />
@@ -20,7 +20,7 @@
 		<forum></forum>
 		<website></website> 
 		<email></email>
-		<source></source>
+		<source>https://github.com/bigyidbuilds/script.gui.flixgui.git</source>
 		<news>v0.0.1 (15/11/2020)
 			[new] New  version
 		</news>

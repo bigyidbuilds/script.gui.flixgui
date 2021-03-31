@@ -8,7 +8,7 @@ from dateutil import parser as dparser
 from urllib   import parse  as urlparse
 '''#####-----Internal Modules-----#####'''
 from . import tmdbapi
-from ._common import Log
+
 
 
 class MetaCache(object):

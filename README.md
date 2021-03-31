@@ -96,3 +96,4 @@ msgstr ""
 
 ## Example Plugins
 * [Basic FlixGui Example](https://github.com/bigyidbuilds/plugin.video.flixgui.example.basic.git)
+* [FlixGui Example with custom gui](https://github.com/bigyidbuilds/plugin.video.flixgui.example.gui)

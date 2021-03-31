@@ -50,7 +50,7 @@ The script has also has it's own database for caching of TMDB Meta data which is
 ```
 # Kodi Media Center language file
 # Addon Name: OKA GUI
-# Addon id: plugin.video.bybexample
+# Addon id: 
 # Addon Provider: BYB
 msgid ""
 msgstr ""

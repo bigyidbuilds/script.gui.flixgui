@@ -93,3 +93,6 @@ msgctxt "#32002"
 msgid "Debug"
 msgstr ""
 ```
+
+##Example Plugins
+*[Basic FlixGui Example](https://github.com/bigyidbuilds/plugin.video.flixgui.example.basic.git)

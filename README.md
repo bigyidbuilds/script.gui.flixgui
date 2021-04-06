@@ -97,3 +97,11 @@ msgstr ""
 ## Example Plugins
 * [Basic FlixGui Example](https://github.com/bigyidbuilds/plugin.video.flixgui.example.basic.git)
 * [FlixGui Example with custom gui](https://github.com/bigyidbuilds/plugin.video.flixgui.example.gui)
+
+## Include my repo with your repo to always have the latest updates
+```
+<dir>
+	<info compressed="false">https://raw.githubusercontent.com/bigyidbuilds/xbmc/main/packages/flixgui/addons.xml</info>
+	<checksum>https://raw.githubusercontent.com/bigyidbuilds/xbmc/main/packages/flixgui/addons.xml.md5</checksum>
+	<datadir zip="true">https://raw.githubusercontent.com/bigyidbuilds/xbmc/main/packages/flixgui/</datadir>
+</dir>
